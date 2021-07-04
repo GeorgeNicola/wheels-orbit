@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import Wheel from './components/Wheel/Wheel'
 
 function App() {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const guid = urlParams.get('guid')
+  const username = urlParams.get('username')
+  const randomChosenPackage = urlParams.get('RandomChosenPackage')
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Wheel/>
     </div>
   );
 }

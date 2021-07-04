@@ -1,0 +1,38 @@
+.wheel-container{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+
+    width:700px;
+    height:700px;
+
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.wheel-container:before {
+    content: "";
+    width:100%;
+    height: 100%;
+    position:absolute;
+    top: -12px;
+    left: 0;
+    right: -10px;
+    z-index:1;
+    transform:scale(1.42);
+
+    background-image:url('../../assets/images/hallow.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.wheel{
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:5;
+
+    transition-timing-function: ease-in-out;
+}
