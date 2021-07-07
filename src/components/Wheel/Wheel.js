@@ -15,7 +15,7 @@ function Wheel() {
 
     return(
         <div className="wheel-container">
-            {/* <TechnicalError/> */}
+            <TechnicalError/>
             <img className="wheel" ref={wheel} src={wheelImg} onClick={() => rotate(720)}/>
         </div>
     )
