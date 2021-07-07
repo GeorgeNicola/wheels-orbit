@@ -1,17 +1,26 @@
+import { useState, useEffect } from 'react';
 import './App.css';
-import Wheel from './components/Wheel/Wheel'
+import Wheel from './components/Wheel/Wheel';
 
 function App() {
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const guid = urlParams.get('guid')
-  const username = urlParams.get('username')
-  const randomChosenPackage = urlParams.get('RandomChosenPackage')
+  const [params, setParams] = useState({})
 
+  useEffect(() => {
+    const queryString = window.location.search
+    const urlParams = new URLSearchParams(queryString)
+    
+    setParams({...params, 
+      guid: urlParams.get('guid'),
+      username: urlParams.get('username'),
+      randomChosenPackage: urlParams.get('RandomChosenPackage')
+    })
+  }, [])
+
+  //TO DO: Handle audio here
 
   return (
     <div className="App">
-      <Wheel/>
+      <Wheel />
     </div>
   );
 }
