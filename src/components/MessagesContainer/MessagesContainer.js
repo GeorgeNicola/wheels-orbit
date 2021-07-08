@@ -1,37 +1,31 @@
 import './MessagesContainer.css'
+import Congrats from '../Message/Congrats'
+import UsedSpin from '../Message/UsedSpin'
+import ExpiredCampaign from '../Message/ExpiredCampaign'
 import TechnicalError from '../Message/TechnicalError'
 
-const MessagesContainer = ({messageStatus}) => {
-    console.log(messageStatus)
 
-
-
-    // const returnMessage = () => {
-    //     switch (messageStatus) {
-    //         case "none":
-    //             return (<TechnicalError/>)
-
-    //         default:
-    //             break;
-    //         }
-    // }
-    // return(
-    //     <div className="messages-container">
-    //         {returnMessage}
-    //     </div>
-    // )
-
+const ReturnMessage = ({messageStatus}) => {
     switch (messageStatus) {
-        case "none":
-            return(
-                    <div className="messages-container">
-                        <TechnicalError/>
-                    </div>
-                )
-
+        case "Congrats":
+            return <Congrats/>
+        case "UsedSpin":
+            return <UsedSpin/>
+        case "TechnicalError":
+            return <TechnicalError/>
+        case "ExpiredCampaign":
+            return <ExpiredCampaign/>
         default:
-            break;
+            return <div></div>
         }
+}
+
+const MessagesContainer = ({messageStatus}) => {
+    return(
+        <div className="messages-container messageAnimation">
+            <ReturnMessage messageStatus={messageStatus}/>
+        </div>
+    )
 }
 
 export default MessagesContainer

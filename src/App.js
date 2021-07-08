@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="App">
-      <Wheel />
+      <Wheel params={params}/>
     </div>
   );
 }
