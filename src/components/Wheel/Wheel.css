@@ -17,13 +17,23 @@
     width:100%;
     height: 100%;
     position:absolute;
-    top: -12px;
-    left: 0;
-    right: -10px;
     z-index:1;
-    transform:scale(1.42);
+    transform:scale(1.57);
 
     background-image:url('../../assets/images/hallow.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.wheel-container:after {
+    content: "";
+    width:100%;
+    height: 100%;
+    position:absolute;
+    z-index:10;
+    transform:scale(1.09);
+
+    background-image:url('../../assets/images/outer-wheel.png');
     background-repeat: no-repeat;
     background-size:cover;
 }
@@ -35,4 +45,12 @@
     z-index:5;
 
     transition-timing-function: ease-in-out;
+}
+
+.spin{
+    position:relative;
+    bottom:30px;
+    z-index:15;
+
+    width:21%;
 }

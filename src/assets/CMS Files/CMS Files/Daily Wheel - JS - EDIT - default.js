@@ -202,9 +202,9 @@ $.ajax({
     url: "https://stage-us.888casino.com/claim/random/?guid=3121251251251",
     success: function(result) {
         console.log(result)
-        let ajaxValue = $(result).find("#fullContent > div").text();
-        ajaxValue = ajaxValue.replace(/\D/g, "");
-        console.log(ajaxValue)
+        // let ajaxValue = $(result).find("#fullContent > div").text();
+        // ajaxValue = ajaxValue.replace(/\D/g, "");
+        // console.log(ajaxValue)
     },
     error: function(result) {
         console.log(result)
@@ -215,14 +215,12 @@ $.ajax({
 
 fetch('https://stage-us.888casino.com/claim/random/?guid=3121251251251', {
     method: 'POST',
-    headers : { 
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    }
 })
 .then(result => {
-    let ajaxValue = $(result).find("#fullContent > div").text();
-        ajaxValue = ajaxValue.replace(/\D/g, "");
-        console.log(ajaxValue)
+    console.log(result)
+    // let ajaxValue = $(result).find("#fullContent > div").text();
+    //     ajaxValue = ajaxValue.replace(/\D/g, "");
+    //     console.log(ajaxValue)
     // console.log(data)
-});
+})
+.catch(err => console.log("Error: ", err))
