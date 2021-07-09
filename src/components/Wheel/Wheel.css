@@ -61,3 +61,28 @@
 
     width:125px;
 }
+
+.ticker-container{
+    position:absolute;
+    top:-6%;
+    z-index:20;
+
+    width:16%;
+}
+
+.ticker{
+    width:100%;
+}
+
+.ticker-animation{
+    animation-name: tickerAnimation;
+    transform-origin: top;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+}
+
+@keyframes tickerAnimation {
+    0% { transform: rotate(0deg); }
+    30% { transform:rotate(-25deg); }
+    100% { transform:rotate(0deg); }
+}
