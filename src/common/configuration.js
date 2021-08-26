@@ -1,2 +1,4 @@
-export const PRIZES_COUNTER = 5;
+export const CONFIG = { 
+    PRIZES_COUNTER: 5,
+}
 
