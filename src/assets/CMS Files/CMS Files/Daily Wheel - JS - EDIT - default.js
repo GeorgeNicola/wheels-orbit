@@ -1,3 +1,5 @@
+
+
 Game.prototype.settings.mechanism = "single";
 Game.prototype.settings.packages.prizes = [
     "5%",
