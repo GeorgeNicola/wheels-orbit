@@ -12,8 +12,7 @@ import tickSound from '../../assets/sounds/tick.mp3';
 //Components
 import MessagesContainer from '../MessagesContainer/MessagesContainer';
 
-//Constants
-import { PRIZES_COUNTER } from '../../common/configuration';
+import { CONFIG } from '../../common/configuration';
 
 
 
@@ -31,33 +30,53 @@ function Wheel({params}) {
         })
     }, [])
 
-
-    // const startWheel = () => {
-    //     let deg = 720; //Rotate the wheel at least 2 times
-    //     console.log(params.randomChosenPackage)
-    //     deg += params.randomChosenPackage * 72;
-
-    //     wheel.current.style.transition = `transform 5s ease-out 0s`;
-    //     wheel.current.style.transform = `rotate(${deg}deg)`;
-
-    //     setTimeout(function(){
-    //         setMessageStatus("Congrats")
-    //     }, 5000)
-    // }
-
     const tick = () => {
         console.log("Tick");
         tickTrigger.play()
         document.querySelector(".ticker").classList.add("ticker-animation")
     }
 
+    const requestClaim = () => {
+        setLoaded(false)
+
+        setTimeout(function(){
+            setLoaded(true)
+            startWheel()
+        }, 1000)
+    }
+
+    const play = () => { 
+        requestClaim() 
+    }
+
+
+
+
+
+
+
+    const startWheel = () => {
+        let deg = 720; //Rotate the wheel at least 2 times
+        console.log(params.randomChosenPackage)
+        deg += params.randomChosenPackage * 72;
+
+        wheel.current.style.transition = `transform 5s ease-out 0s`;
+        wheel.current.style.transform = `rotate(${deg}deg)`;
+
+        
+
+        setTimeout(function(){
+            setMessageStatus("Congrats")
+        }, 5000)
+    }
+
     const startWheel2 = () => {
         let deg = 0;
         let stopDeg = 720;
-        stopDeg += params.randomChosenPackage * 360/PRIZES_COUNTER;
+        stopDeg += params.randomChosenPackage * 360/CONFIG.PRIZES_COUNTER;
 
         const rotationAnimation = setInterval(function() {
-            let range = 360/PRIZES_COUNTER;
+            let range = 360/CONFIG.PRIZES_COUNTER;
 
             if(deg%range === range/2 - 3) {
                 tick();
@@ -104,7 +123,7 @@ function Wheel({params}) {
         //Trigger events when rotation = x deg
 
         let stopDeg = 720; //Rotate the wheel at least 2 times
-        let range = 360/PRIZES_COUNTER;
+        let range = 360/CONFIG.PRIZES_COUNTER;
         stopDeg += params.randomChosenPackage * 72;
 
 
@@ -157,17 +176,6 @@ function Wheel({params}) {
     
 
     // }
-
-    const requestClaim = () => {
-        setLoaded(false)
-
-        setTimeout(function(){
-            setLoaded(true)
-            startWheel3()
-        }, 1000)
-    }
-
-    const play = () => { requestClaim() }
 
     return(
         <div className="wheel-container">
