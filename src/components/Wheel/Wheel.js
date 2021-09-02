@@ -12,6 +12,7 @@ import tickSound from '../../assets/sounds/tick.mp3';
 //Components
 import MessagesContainer from '../MessagesContainer/MessagesContainer';
 
+//Configuration
 import { CONFIG } from '../../common/configuration';
 
 
@@ -72,7 +73,7 @@ function Wheel({params}) {
 
     const startWheel2 = () => {
         let deg = 0;
-        let stopDeg = 720;
+        let stopDeg = 1080;
         stopDeg += params.randomChosenPackage * 360/CONFIG.PRIZES_COUNTER;
 
 
@@ -117,7 +118,7 @@ function Wheel({params}) {
           return (angle < 0 ? angle + 360 : angle); //adding 360 degrees here when angle < 0 is equivalent to adding (2 * Math.PI) radians before
         }
         return 0;
-      }
+    }
 
     const startWheel3 = () => {
         //TO DO: initiate css animation
@@ -129,32 +130,29 @@ function Wheel({params}) {
         stopDeg += params.randomChosenPackage * 72;
 
 
-        wheel.current.style.transition = `transform 7s ease-out 0s`;
+        wheel.current.style.transition = `transform 8s ease-out 0s`;
         wheel.current.style.transform = `rotate(${stopDeg}deg)`;
 
 
         const tickTrigger = setInterval(function() {
             let angle = getCurrentRotation(wheel.current)
             console.log("Angle: ", angle)
-            console.log("angle%range", angle%range)
-            console.log("range/2", range/2)
+            // console.log("angle%range", angle%range)
+            // console.log("range/2", range/2)
             
 
 
             //Increase range for faster speed
-            if( angle%range === range/2 ||
-                angle%range === range/2 - 1 ||
-                angle%range === range/2 + 1
-            ) {
+            if( range/2 - 4 <= angle%range && angle%range <= range/2 + 4) {
                 tick();
             }
-        }, 1);
+        }, 5);
 
 
         setTimeout(function(){
             setMessageStatus("Congrats")
             window.clearInterval(tickTrigger);
-        }, 7000)
+        }, 8000)
 
     }
 
@@ -162,18 +160,24 @@ function Wheel({params}) {
         let stopDeg = 720;
         let tickRange = 360/CONFIG.PRIZES_COUNTER;
 
+        let range = 360/CONFIG.PRIZES_COUNTER;
 
 
         const anim = anime({
             targets: wheel.current,
-            rotate: '720deg',
-            duration: 5000,
+            rotate: '1080deg',
+            duration: 8000,
             easing: "easeOutQuad",
             update: function(anim) {
+                let angle = anim.progress*1080/100;
+                angle = Math.trunc(angle)
                 console.log("Animation progress: ",anim.progress)
                 console.log("Current angle: ", anim.progress*720/100)
+                
 
-
+                if( range/2 - 2 <= angle%range && angle%range <= range/2 + 2) {
+                    tick();
+                }
                 // let currentDeg = anim.progress*720/100;
                 // console.log(Math.round(currentDeg % tickRange))
                 // console.log(tickRange/2 - 3)
@@ -198,25 +202,48 @@ function Wheel({params}) {
         let stopDeg = 720;
         stopDeg += params.randomChosenPackage * 360/CONFIG.PRIZES_COUNTER;
 
+        // const rotationAnimation = setInterval(function() {
+        //     let range = 360/CONFIG.PRIZES_COUNTER;
+
+        //     if(deg%range === range/2 - 3) {
+        //         tick();
+        //     }
+
+        //     if(deg < stopDeg) { 
+        //         deg += 1;
+        //     }
+        //     else {
+        //      // setMessageStatus("Congrats");
+        //       window.clearInterval(rotationAnimation);
+        //     }
+        
+        //     console.log(deg);
+        //     wheel.current.style.transform = `rotate(${deg}deg)`;
+
+        // }, 7.5);
+
+
+        let addedDeg = 1;
         const rotationAnimation = setInterval(function() {
             let range = 360/CONFIG.PRIZES_COUNTER;
 
-            if(deg%range === range/2 - 3) {
+            if(Math.trunc(deg)%range === range/2 ) {
                 tick();
             }
+            addedDeg+=-0.01;
 
             if(deg < stopDeg) { 
-                deg += 1;
+                deg += addedDeg;
             }
             else {
-              setMessageStatus("Congrats");
+             // setMessageStatus("Congrats");
               window.clearInterval(rotationAnimation);
             }
         
             console.log(deg);
             wheel.current.style.transform = `rotate(${deg}deg)`;
+        }, 10);
 
-        }, 7.5);
 
 
         // setTimeout(function(){
