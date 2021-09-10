@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/wheels-orbit/static/css/main.0104bcd7.chunk.css",
+    "main.js": "/wheels-orbit/static/js/main.b0bfbd54.chunk.js",
+    "main.js.map": "/wheels-orbit/static/js/main.b0bfbd54.chunk.js.map",
+    "runtime-main.js": "/wheels-orbit/static/js/runtime-main.c32fd80f.js",
+    "runtime-main.js.map": "/wheels-orbit/static/js/runtime-main.c32fd80f.js.map",
+    "static/js/2.2ba5af5e.chunk.js": "/wheels-orbit/static/js/2.2ba5af5e.chunk.js",
+    "static/js/2.2ba5af5e.chunk.js.map": "/wheels-orbit/static/js/2.2ba5af5e.chunk.js.map",
+    "static/js/3.c38eea88.chunk.js": "/wheels-orbit/static/js/3.c38eea88.chunk.js",
+    "static/js/3.c38eea88.chunk.js.map": "/wheels-orbit/static/js/3.c38eea88.chunk.js.map",
+    "index.html": "/wheels-orbit/index.html",
+    "static/css/main.0104bcd7.chunk.css.map": "/wheels-orbit/static/css/main.0104bcd7.chunk.css.map",
+    "static/js/2.2ba5af5e.chunk.js.LICENSE.txt": "/wheels-orbit/static/js/2.2ba5af5e.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/wheels-orbit/static/media/Background.8c7a2878.jpg",
+    "static/media/Wheel.css": "/wheels-orbit/static/media/outer-wheel.4215fa85.png",
+    "static/media/loading.b0997f97.gif": "/wheels-orbit/static/media/loading.b0997f97.gif",
+    "static/media/spin.4295bf12.png": "/wheels-orbit/static/media/spin.4295bf12.png",
+    "static/media/tick.2e9e79dd.mp3": "/wheels-orbit/static/media/tick.2e9e79dd.mp3",
+    "static/media/tiker.02fd30c0.png": "/wheels-orbit/static/media/tiker.02fd30c0.png",
+    "static/media/wheel.369afc68.png": "/wheels-orbit/static/media/wheel.369afc68.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c32fd80f.js",
+    "static/js/2.2ba5af5e.chunk.js",
+    "static/css/main.0104bcd7.chunk.css",
+    "static/js/main.b0bfbd54.chunk.js"
+  ]
+}
