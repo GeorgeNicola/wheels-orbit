@@ -22,6 +22,8 @@ function Wheel({params}) {
     const [loading, setLoading] = useState(false);
     const wheel = useRef(null);
     const tickTrigger = new Audio(tickSound);
+
+    console.log("Parameters: ", params);
     
     
     useEffect(function(){
@@ -104,12 +106,6 @@ function Wheel({params}) {
     const play = () => { 
         requestClaim();
     } 
-
-
-
-    
-
-
 
 
 

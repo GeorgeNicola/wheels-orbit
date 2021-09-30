@@ -5,25 +5,31 @@ import ExpiredCampaign from '../Message/ExpiredCampaign'
 import TechnicalError from '../Message/TechnicalError'
 
 
-const ReturnMessage = ({messageStatus}) => {
-    switch (messageStatus) {
-        case "Congrats":
-            return <Congrats/>
-        case "UsedSpin":
-            return <UsedSpin/>
-        case "TechnicalError":
-            return <TechnicalError/>
-        case "ExpiredCampaign":
-            return <ExpiredCampaign/>
-        default:
-            return <div></div>
-        }
-}
+// const ReturnMessage = ({messageStatus}) => {
+//     switch (messageStatus) {
+//         case "Congrats":
+//             return <Congrats/>
+//         case "UsedSpin":
+//             return <UsedSpin/>
+//         case "TechnicalError":
+//             return <TechnicalError/>
+//         case "ExpiredCampaign":
+//             return <ExpiredCampaign/>
+//         default:
+//             return <div></div>
+//         }
+// }
 
 const MessagesContainer = ({messageStatus}) => {
     return(
         <div className="messages-container messageAnimation">
-            <ReturnMessage messageStatus={messageStatus}/>
+            {   
+                (messageStatus === "Congrats") ? <Congrats /> : ""
+                (messageStatus === "UsedSpin") ? <UsedSpin /> : ""
+                (messageStatus === "TechnicalError") ? <TechnicalError /> : ""
+                (messageStatus === "ExpiredCampaign") ? <ExpiredCampaign /> : ""
+            }
+            {/* <ReturnMessage messageStatus={messageStatus}/> */}
         </div>
     )
 }
