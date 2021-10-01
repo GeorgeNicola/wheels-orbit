@@ -1,0 +1,15 @@
+TO DO:
+- check $$SessionItem$$
+- add params in the cms component and pass them in the link
+
+- CONFIG ADD: claim link etc
+- tick trigger => time based animated
+
+
+TO DO ( USE AS WEB COMPONENT )
+- build with constant names 
+- FIGURE OUT A WAY TO USE IMAGES
+
+
+TEST PAGE: 
+http://stage-njpe-us.888casino.com/game/george-test/
