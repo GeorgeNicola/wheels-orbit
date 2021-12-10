@@ -9,7 +9,13 @@ TO DO:
 TO DO ( USE AS WEB COMPONENT )
 - build with constant names 
 - FIGURE OUT A WAY TO USE IMAGES
+- TEST API Request
 
 
 TEST PAGE: 
 http://stage-njpe-us.888casino.com/game/george-test/
+
+
+
+var Lftd = 'SessionItem(isftd,)'';
+'serial' : '$$SessionItem(sr,)$$',   (in an object)
